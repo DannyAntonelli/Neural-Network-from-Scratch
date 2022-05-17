@@ -12,10 +12,10 @@ class NeuralNetwork:
     def add(self, layer: Layer):
         self._layers.append(layer)
 
-    def _forward_propagate(self, output: np.ndarray):
+    def _forward_propagate(self, x: np.ndarray):
         for layer in self._layers:
-            output = layer.forward_propagate(output)
-        return output
+            x = layer.forward_propagate(x)
+        return x
 
     def _backward_propagate(self, prediction: np.ndarray, label: np.ndarray, learning_rate: float):
         gradient = self._loss.gradient(prediction, label)

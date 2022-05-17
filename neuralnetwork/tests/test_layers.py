@@ -11,12 +11,12 @@ class TestDense(unittest.TestCase):
         self.layer = Dense(self.input_size, self.units)
 
     def test_forward_shape(self):
-        input = np.random.rand(1, self.input_size)
-        self.assertEqual(self.layer.forward_propagate(input).shape, (1, self.units))
+        x = np.random.rand(1, self.input_size)
+        self.assertEqual(self.layer.forward_propagate(x).shape, (1, self.units))
 
     def test_backward_shape(self):
-        input = np.random.rand(1, self.input_size)
-        self.layer.forward_propagate(input)
+        x = np.random.rand(1, self.input_size)
+        self.layer.forward_propagate(x)
         output_gradient = np.random.rand(1, self.units)
         learning_rate = 0.1
         self.assertEqual(self.layer.backward_propagate(output_gradient, learning_rate).shape, (1, self.input_size))

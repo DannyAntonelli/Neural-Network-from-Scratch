@@ -24,13 +24,13 @@ class Dense(Layer):
         self._bias = np.zeros((1, units))
         self._activation = activation
 
-    def forward_propagate(self, input: np.ndarray) -> np.ndarray:
-        self._input = input
-        self._output = np.dot(input, self._weights) + self._bias
-        return self._activation(self._output)
+    def forward_propagate(self, x: np.ndarray) -> np.ndarray:
+        self._x = x
+        self._z = np.dot(x, self._weights) + self._bias
+        return self._activation(self._z)
 
     def backward_propagate(self, output_gradient: np.ndarray, learning_rate: float) -> np.ndarray:
-        output_gradient *= self._activation.gradient(self._output)
-        self._weights -= learning_rate * np.dot(self._input.T, output_gradient)
+        output_gradient *= self._activation.gradient(self._z)
+        self._weights -= learning_rate * np.dot(self._x.T, output_gradient)
         self._bias -= learning_rate * output_gradient
         return np.dot(output_gradient, self._weights.T)
