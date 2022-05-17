@@ -19,7 +19,7 @@ class Layer(ABC):
 
 
 class Dense(Layer):
-    def __init__(self, input_size: int, units: int, activation: Activation=Linear()):
+    def __init__(self, input_size: int, units: int, activation: Activation=Linear()) -> None:
         self._weights = np.random.randn(input_size, units) * np.sqrt(2. / input_size)
         self._bias = np.zeros((1, units))
         self._activation = activation

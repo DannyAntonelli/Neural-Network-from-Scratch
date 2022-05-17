@@ -5,19 +5,19 @@ from neuralnetwork.losses import Loss
 
 
 class NeuralNetwork:
-    def __init__(self, layers: list[Layer], loss: Loss):
+    def __init__(self, layers: list[Layer], loss: Loss) -> None:
         self._layers = layers
         self._loss = loss
 
-    def add(self, layer: Layer):
+    def add(self, layer: Layer) -> None:
         self._layers.append(layer)
 
-    def _forward_propagate(self, x: np.ndarray):
+    def _forward_propagate(self, x: np.ndarray) -> np.ndarray:
         for layer in self._layers:
             x = layer.forward_propagate(x)
         return x
 
-    def _backward_propagate(self, prediction: np.ndarray, label: np.ndarray, learning_rate: float):
+    def _backward_propagate(self, prediction: np.ndarray, label: np.ndarray, learning_rate: float) -> None:
         gradient = self._loss.gradient(prediction, label)
         for layer in reversed(self._layers):
             gradient = layer.backward_propagate(gradient, learning_rate)
@@ -28,7 +28,7 @@ class NeuralNetwork:
     def evaluate(self, x: np.ndarray, y: np.ndarray) -> float:
         return self._loss(self._forward_propagate(x), y)
 
-    def fit(self, x: np.ndarray, y: np.ndarray, epochs: int, learning_rate: float, verbose: bool=False):
+    def fit(self, x: np.ndarray, y: np.ndarray, epochs: int, learning_rate: float, verbose: bool=False) -> None:
         for epoch in range(epochs):
             loss: float = .0
 

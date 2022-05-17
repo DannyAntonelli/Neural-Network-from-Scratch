@@ -15,7 +15,7 @@ def get_model() -> NeuralNetwork:
         loss=BinaryCrossEntropy()
     )
 
-def main():
+def main() -> None:
     x_train = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     y_train = np.array([[0], [1], [1], [0]])
 

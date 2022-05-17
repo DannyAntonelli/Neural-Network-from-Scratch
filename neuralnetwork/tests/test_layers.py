@@ -5,16 +5,16 @@ from neuralnetwork.layers import Dense
 
 
 class TestDense(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.input_size = 30
         self.units = 100
         self.layer = Dense(self.input_size, self.units)
 
-    def test_forward_shape(self):
+    def test_forward_shape(self) -> None:
         x = np.random.rand(1, self.input_size)
         self.assertEqual(self.layer.forward_propagate(x).shape, (1, self.units))
 
-    def test_backward_shape(self):
+    def test_backward_shape(self) -> None:
         x = np.random.rand(1, self.input_size)
         self.layer.forward_propagate(x)
         output_gradient = np.random.rand(1, self.units)

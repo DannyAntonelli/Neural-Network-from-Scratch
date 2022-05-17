@@ -40,7 +40,7 @@ def get_model() -> NeuralNetwork:
 def get_max_index(x: np.ndarray) -> int:
     return np.where(x == np.amax(x))[0][0]
 
-def main():
+def main() -> None:
     (x_train, y_train), (x_test, y_test) = get_data()
 
     model = get_model()
