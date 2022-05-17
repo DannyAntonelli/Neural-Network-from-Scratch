@@ -32,7 +32,7 @@ def get_model() -> NeuralNetwork:
         layers=[
             Dense(input_size=INPUT_DIMENSION, units=100, activation=Tanh()),
             Dense(input_size=100, units=50, activation=ReLU()),
-            Dense(50, OUTPUT_DIMENSION, activation=Sigmoid())
+            Dense(input_size=50, units=OUTPUT_DIMENSION, activation=Sigmoid())
         ],
         loss=MSE()
     )
