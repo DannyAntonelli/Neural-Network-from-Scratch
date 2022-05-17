@@ -23,7 +23,7 @@ class NeuralNetwork:
             gradient = layer.backward_propagate(gradient, learning_rate)
 
     def predict(self, x: np.ndarray) -> np.ndarray:
-        return np.array(list(map(self._forward_propagate, x))).flatten()
+        return np.array([self._forward_propagate(elem)[0] for elem in x])
 
     def evaluate(self, x: np.ndarray, y: np.ndarray) -> float:
         return self._loss(self._forward_propagate(x), y)
