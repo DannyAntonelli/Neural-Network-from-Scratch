@@ -1,5 +1,4 @@
-# Neural-Network-from-Scratch
-Neural Network from scratch in Python
+# Neural Network from Scratch
 
 ## Setup
 Run the following command to install the neuralnetwork package (consider using a virtual environment):
