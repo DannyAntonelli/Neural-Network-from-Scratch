@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='neuralnetwork',
+    name="neuralnetwork",
     version="1.0.0",
-    author='DannyAntonelli',
+    author="DannyAntonelli",
     packages=find_packages(),
-    install_requires=['numpy'],
-    python_requires='>=3.10'
+    install_requires=["numpy"],
+    python_requires=">=3.10"
 )

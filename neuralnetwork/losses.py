@@ -3,9 +3,9 @@ import numpy as np
 
 
 class Loss(ABC):
-    '''
+    """
     Protocol implemented by loss function classes
-    '''
+    """
     @abstractmethod
     def __call__(self, predictions: np.ndarray, labels: np.ndarray) -> np.float64:
         ...

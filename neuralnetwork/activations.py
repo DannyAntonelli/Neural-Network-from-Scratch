@@ -3,9 +3,9 @@ import numpy as np
 
 
 class Activation(ABC):
-    '''
+    """
     Protocol implemented by activation function classes
-    '''
+    """
     @abstractmethod
     def __call__(self, x: np.ndarray) -> np.ndarray:
         ...

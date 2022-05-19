@@ -5,10 +5,9 @@ from .activations import Activation, Linear
 
 
 class Layer(ABC):
-    '''
+    """
     Protocol implemented by neural network layers
-    '''
-
+    """
     @abstractmethod
     def forward_propagate(self, input: np.ndarray) -> np.ndarray:
         ...
