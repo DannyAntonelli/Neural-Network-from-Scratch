@@ -7,7 +7,7 @@ Run the following command to install the neuralnetwork package (consider using a
 $ pip install .
 ```
 
-If you want to run the mnist example you need additional packages:
+If you want to run the MNIST and Boston housing examples you need additional packages:
 
 ```bash
 $ pip install -r examples/requirements.txt
